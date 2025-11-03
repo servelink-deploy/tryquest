@@ -1,0 +1,27 @@
+{
+  "name": "@conar/shared",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./ai-tools": "./src/ai-tools.ts",
+    "./constants": "./src/constants.ts",
+    "./encryption": "./src/encryption.ts",
+    "./enums/*": "./src/enums/*.ts",
+    "./filters": "./src/filters/index.ts",
+    "./filters/*": "./src/filters/*.ts",
+    "./databases": "./src/databases.ts",
+    "./schemas/postgres/*": "./src/schemas/postgres/*.ts",
+    "./utils/*": "./src/utils/*.ts"
+  },
+  "scripts": {
+    "check-types": "tsc"
+  },
+  "dependencies": {
+    "@conar/configs": "workspace:*",
+    "ai": "catalog:",
+    "arktype": "catalog:",
+    "drizzle-orm": "catalog:",
+    "nanoid": "catalog:",
+    "zod": "catalog:"
+  }
+}

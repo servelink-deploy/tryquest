@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@xyflow/react/dist/style.css";
+@import "./fonts.css";
+@import "./monaco.css";
+@import "./typography.css";
+@import "./animations.css";
+
+@plugin 'tailwind-scrollbar';
+@plugin '@tailwindcss/typography';
+
+@source "../../../apps/**/*.{ts,tsx}";
+@source "../../../components/**/*.{ts,tsx}";
+@source "../**/*.{ts,tsx}";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.6rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.5995 0.18 264);
+  --primary-foreground: oklch(0.984 0.003 255.508);
+  --secondary: oklch(96% 0.003 255.508);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.92 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --success: oklch(0.577 0.645 156.225);
+  --success-foreground: oklch(0.985 0 0);
+  --warning: oklch(0.75 0.220 85.0);
+  --warning-foreground: oklch(0.985 0 0);
+  --border: oklch(0 0 0 / 6%);
+  --input: oklch(93% 0.003 255.508);
+  --ring: oklch(0.5995 0.18 264);
+}
+
+.dark {
+  --background: oklch(0.21 0.0042 264);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.24 0.0042 264);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.26 0.0042 264);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.5995 0.18 264);
+  --secondary: oklch(0.28 0.0042 264);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.371 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.220 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --success: oklch(0.704 0.220 142.216);
+  --success-foreground: oklch(0.985 0 0);
+  --warning: oklch(0.85 0.220 85.0);
+  --warning-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 6%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: oklch(0.5995 0.18 264);
+}
+
+@theme inline {
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --rainbow: rainbow var(--speed, 2s) infinite linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+* {
+  -electron-corner-smoothing: system-ui;
+  overscroll-behavior: none;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  a {
+    @apply focus-visible:outline-ring/50 text-primary hover:text-primary/80;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+::selection {
+  @apply bg-primary/30 text-primary;
+}
+
+.bg-primary::selection,
+.bg-primary *::selection {
+  @apply bg-white/90 text-primary;
+}

@@ -1,0 +1,29 @@
+{
+  "extends": "@conar/configs/ts/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "noEmit": true
+  },
+  "references": [
+    {
+      "path": "../api"
+    }
+  ],
+  "include": [
+    ".",
+    "../../packages/sql/columns.ts",
+    "../../packages/sql/delete.ts",
+    "../../packages/sql/drop-table.ts",
+    "../../packages/sql/enums.ts",
+    "../../packages/sql/constraints.ts",
+    "../../packages/sql/rename-table.ts",
+    "../../packages/sql/rows.ts",
+    "../../packages/sql/set.ts",
+    "../../packages/sql/tables-and-schemas.ts",
+    "../../packages/sql/total.ts",
+    "../../packages/sql/where.ts"
+  ]
+}

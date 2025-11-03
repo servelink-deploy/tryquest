@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
+  "appId": "com.zenderock.tryquest",
+  "productName": "TryQuest",
+  "asar": true,
+  "directories": {
+    "output": "release/${version}"
+  },
+  "generateUpdatesFilesForAllChannels": true,
+  "publish": {
+    "private": false,
+    "provider": "github",
+    "owner": "zenderock",
+    "repo": "tryquest"
+  },
+  "protocols": [
+    {
+      "name": "TryQuest",
+      "schemes": [
+        "tryquest"
+      ]
+    }
+  ],
+  "files": [
+    "out"
+  ],
+  "mac": {
+    "category": "public.app-category.developer-tools",
+    "target": [
+      {
+        "target": "default",
+        "arch": [
+          "arm64",
+          "x64"
+        ]
+      }
+    ],
+    "artifactName": "${productName}-Mac-${arch}-${version}-Installer.${ext}"
+  },
+  "win": {
+    "icon": "build/icon.ico",
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "artifactName": "${productName}-Windows-${version}-Setup.${ext}"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false
+  },
+  "linux": {
+    "icon": "build/logo.png",
+    "target": [
+      "AppImage",
+      "deb"
+    ],
+    "category": "Development",
+    "mimeTypes": [
+      "x-scheme-handler/tryquest"
+    ],
+    "executableName": "TryQuest",
+    "artifactName": "${productName}-Linux-${version}.${ext}"
+  }
+}

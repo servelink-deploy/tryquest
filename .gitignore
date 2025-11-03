@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+.turbo
+*.tsbuildinfo
+.idea
+# Env files (never commit)
+.env
+.env.*
+**/.env*
+
+# Build outputs (do not commit compiled artifacts)
+apps/desktop/out
+apps/web/dist
+apps/api/dist

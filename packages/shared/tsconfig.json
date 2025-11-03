@@ -1,0 +1,9 @@
+{
+  "extends": "@conar/configs/ts/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true
+  },
+  "include": ["."],
+  "exclude": ["node_modules"]
+}

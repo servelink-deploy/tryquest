@@ -1,0 +1,12 @@
+{
+  "extends": "@conar/configs/ts/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@conar/ui/*": ["./src/*"]
+    },
+    "noEmit": true
+  },
+  "include": ["."],
+  "exclude": ["node_modules"]
+}
