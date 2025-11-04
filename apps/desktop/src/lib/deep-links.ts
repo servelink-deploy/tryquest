@@ -8,7 +8,7 @@ export async function handleDeepLink(url: string): Promise<{
   | 'reset-password'
   | 'unknown'
 }> {
-  const { pathname, searchParams } = new URL(url.replace('tryquest://', 'https://servel.ink/tryquest/'))
+  const { pathname, searchParams } = new URL(url.replace('tryquest://', 'https://tryquest.servel.ink/'))
 
   if (pathname === '/session') {
     await handleSession(searchParams)

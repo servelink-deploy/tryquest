@@ -2,7 +2,7 @@
 
 TryQuest est un outil desktop open source pour PostgreSQL avec IA intégrée. Utilisez l'IA locale via Ollama (hors‑ligne, privée) ou vos propres clés cloud (OpenAI, Anthropic, Google Gemini, xAI). 
 
-Site: https://servel.ink/tryquest
+Site: https://tryquest.servel.ink
 
 ## Features
 

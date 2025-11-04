@@ -145,7 +145,7 @@ You agree to indemnify and hold harmless Wannabe Space, LLC from claims arising 
 If you have questions about these Terms of Service, please contact us:
 
 - **X**: [@tryquest_app](https://x.com/tryquest_app)
-- **Website**: [https://servel.ink/tryquest](https://servel.ink/tryquest)
+- **Website**: [https://tryquest.servel.ink](https://tryquest.servel.ink)
 
 ## 17. Legal Provisions
 

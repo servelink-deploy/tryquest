@@ -55,4 +55,4 @@ Welcome to TryQuest ("we," "our," or "us"), owned by Wannabe Space, LLC. We are 
 If you have any questions about this Privacy Policy or our data practices, please contact us:
 
 - **X**: [@tryquest_app](https://x.com/tryquest_app)
-- **Website**: [https://servel.ink/tryquest](https://servel.ink/tryquest)
+- **Website**: [https://tryquest.servel.ink](https://tryquest.servel.ink)

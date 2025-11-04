@@ -106,7 +106,7 @@ function buildTemplate(mainWindow: BrowserWindow): MenuItemConstructorOptions[] 
       {
         label: 'TryQuest Website',
         click() {
-          shell.openExternal('https://servel.ink/tryquest')
+          shell.openExternal('https://tryquest.servel.ink')
         },
       },
     ],

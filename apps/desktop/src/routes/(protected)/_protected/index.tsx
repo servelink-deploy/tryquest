@@ -60,7 +60,7 @@ function DashboardPage() {
         <Separator />
         <div className="mt-3 flex gap-2 items-center">
           <a
-            href="https://servel.ink/tryquest"
+            href="https://tryquest.servel.ink"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground/50 p-1 hover:text-muted-foreground/70 transition-colors"
