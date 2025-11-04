@@ -49,7 +49,7 @@ export function Pricing({ className }: PricingSectionProps) {
         </div>
       ),
       onClick: () => {
-        router.navigate({ to: '/download' })
+        window.location.href = 'https://github.com/servelink-deploy/tryquest'
       },
       features: [
         {

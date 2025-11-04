@@ -52,10 +52,10 @@ export function Navbar({ className, ...props }: ComponentProps<"header">) {
           className="gap-1 sm:gap-2 text-xs sm:text-sm px-2 sm:px-3"
           asChild
         >
-          <Link to="/download">
-            <span className="hidden sm:inline">Get Started</span>
-            <span className="sm:hidden">Download</span>
-          </Link>
+          <a href="https://github.com/servelink-deploy/tryquest" target="_blank">
+            <span className="hidden sm:inline">Github</span>
+            <span className="sm:hidden">Github</span>
+          </a>
         </Button>
       </div>
     </header>
