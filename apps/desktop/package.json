@@ -5,12 +5,12 @@
   "private": true,
   "description": "AI-powered tool that makes database operations easier. Built for PostgreSQL. Modern alternative to traditional database management tools.",
   "author": {
-    "name": "Wannabe Space, LLC",
-    "email": "wannabespace.llc@gmail.com"
+    "name": "Servelink Deploy",
+    "email": "support@servel.ink"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zenderock/tryquest.git"
+    "url": "https://github.com/servelink-deploy/tryquest.git"
   },
   "main": "./out/main/index.js",
   "scripts": {
