@@ -25,8 +25,7 @@ export const getRepoOptions = queryOptions({
   queryKey: ['octokit', 'get'],
   queryFn: async () => {
     const cached = repoCache.get()
-    if (cached)
-      return cached
+    
 
     const data = await fetchRepo()
 
