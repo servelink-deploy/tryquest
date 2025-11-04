@@ -3,8 +3,9 @@ import { useStore } from '@tanstack/react-store'
 import { RiKey2Line, RiQuestionAnswerLine, RiRobotLine } from '@remixicon/react'
 import { useState } from 'react'
 import { aiSettingsStore } from '~/lib/ai/settings-store'
-import { LocalAIDialog } from '../../../-components/local-ai-dialog'
-import { ApiKeysDialog } from '../../../-components/api-keys-dialog'
+import { LocalAIDialog } from '~/routes/(protected)/_protected/-components/local-ai-dialog'
+import { ApiKeysDialog } from '~/routes/(protected)/_protected/-components/api-keys-dialog'
+
 
 export function ChatPlaceholder() {
   const useLocalAI = useStore(aiSettingsStore, state => state.useLocalAI)
