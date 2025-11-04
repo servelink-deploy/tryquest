@@ -83,7 +83,7 @@ export function Hero({ className }: { className?: string }) {
             size="lg"
             className="w-full sm:w-auto"
           >
-            <a href="https://tryquest-images.servel.ink/releases/TryQuest-Linux-0.23.0-Setup.deb" className='text-white flex items-center space-x-1'>
+            <a href="https://tryquest-images.servel.ink/releases/TryQuest-Linux-0.23.0-Setup.deb" className='text-black flex items-center space-x-1'>
               Linux
             </a>
           </Button>
