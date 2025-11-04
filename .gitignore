@@ -12,3 +12,4 @@ node_modules
 apps/desktop/out
 apps/web/dist
 apps/api/dist
+releases/

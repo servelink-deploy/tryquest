@@ -83,7 +83,7 @@ export function Hero({ className }: { className?: string }) {
             size="lg"
             className="w-full sm:w-auto"
           >
-            <a href="https://github.com/servelink-deploy/tryquest/releases">
+            <a href="https://github.com/servelink-deploy/tryquest/releases" className='text-white flex items-center space-x-1'>
               All platforms
             </a>
           </Button>
