@@ -3,7 +3,7 @@ import { Button } from '@conar/ui/components/button'
 import { Input } from '@conar/ui/components/input'
 import { Separator } from '@conar/ui/components/separator'
 import { cn } from '@conar/ui/lib/utils'
-import { RiAddLine, RiBardLine, RiChatAiLine, RiCloseLine, RiCloudLine, RiDatabase2Line, RiDeleteBinLine, RiEditLine, RiEyeLine, RiFilterLine, RiSendPlaneLine, RiUserLine } from '@remixicon/react'
+import { RiAddLine, RiBardLine, RiChatAiLine, RiCloseLine, RiCloudLine, RiComputerLine, RiDatabase2Line, RiDeleteBinLine, RiEditLine, RiEyeLine, RiFilterLine, RiKey2Line, RiRobotLine, RiSendPlaneLine, RiShieldKeyholeLine, RiUserLine } from '@remixicon/react'
 
 interface FeatureCardProps extends ComponentProps<'article'> {
   featureId: string
@@ -337,6 +337,99 @@ function ManageData() {
   )
 }
 
+function LocalAI() {
+  return (
+    <div className="space-y-4 sm:space-y-6">
+      <FeatureCardTitle
+        className="mb-6 sm:mb-8"
+        title="Local AI Support"
+        description="Run AI models locally with Ollama - no cloud, no API keys, complete privacy."
+        icon={<RiRobotLine className="size-4" aria-hidden="true" />}
+      />
+      <div className="space-y-3 sm:space-y-4">
+        <div className="p-4 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-xl border border-purple-500/20">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="size-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
+              <RiComputerLine className="size-5 text-purple-600 dark:text-purple-400" aria-hidden="true" />
+            </div>
+            <div>
+              <div className="text-sm font-semibold text-foreground">Ollama Integration</div>
+              <div className="text-xs text-muted-foreground">Multiple models available</div>
+            </div>
+          </div>
+          <div className="space-y-2">
+            <div className="flex items-center justify-between text-xs p-2 bg-background/50 rounded">
+              <span className="font-mono">qwen2.5-coder:7b</span>
+              <span className="text-green-600 dark:text-green-400">Balanced</span>
+            </div>
+            <div className="flex items-center justify-between text-xs p-2 bg-background/50 rounded">
+              <span className="font-mono">qwen2.5-coder:14b</span>
+              <span className="text-blue-600 dark:text-blue-400">Performant</span>
+            </div>
+            <div className="flex items-center justify-between text-xs p-2 bg-background/50 rounded">
+              <span className="font-mono">qwen2.5-coder:3b</span>
+              <span className="text-yellow-600 dark:text-yellow-400">Fast</span>
+            </div>
+          </div>
+        </div>
+        <div className="text-xs text-muted-foreground">
+          <strong>100% Private:</strong> Your data never leaves your machine
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function CustomAPIKeys() {
+  return (
+    <div className="space-y-4 sm:space-y-6">
+      <FeatureCardTitle
+        className="mb-6 sm:mb-8"
+        title="Bring Your Own AI Keys"
+        description="Use your own API keys from OpenAI, Anthropic, Google AI, or XAI for maximum flexibility."
+        icon={<RiKey2Line className="size-4" aria-hidden="true" />}
+      />
+      <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-2">
+          <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg border">
+            <div className="size-8 bg-green-500/20 rounded flex items-center justify-center">
+              <RiShieldKeyholeLine className="size-4 text-green-600 dark:text-green-400" />
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-medium">OpenAI</div>
+              <div className="text-xs text-muted-foreground">GPT-4, GPT-4o, o1</div>
+            </div>
+            <div className="size-2 rounded-full bg-green-500" />
+          </div>
+          <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg border">
+            <div className="size-8 bg-purple-500/20 rounded flex items-center justify-center">
+              <RiShieldKeyholeLine className="size-4 text-purple-600 dark:text-purple-400" />
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-medium">Anthropic</div>
+              <div className="text-xs text-muted-foreground">Claude 3.5 Sonnet</div>
+            </div>
+            <div className="size-2 rounded-full bg-green-500" />
+          </div>
+          <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg border">
+            <div className="size-8 bg-blue-500/20 rounded flex items-center justify-center">
+              <RiShieldKeyholeLine className="size-4 text-blue-600 dark:text-blue-400" />
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-medium">Google AI & XAI</div>
+              <div className="text-xs text-muted-foreground">Gemini, Grok</div>
+            </div>
+            <div className="size-2 rounded-full bg-green-500" />
+          </div>
+        </div>
+        <div className="text-xs text-muted-foreground">
+          <strong>Encrypted Storage:</strong> Your keys are encrypted and stored securely
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function Features() {
   return (
     <section aria-labelledby="features-heading" className="py-8 sm:py-12 lg:py-16">
@@ -354,6 +447,12 @@ export function Features() {
         </FeatureCard>
         <FeatureCard featureId="ai-chat">
           <ChatWithDB />
+        </FeatureCard>
+        <FeatureCard featureId="local-ai">
+          <LocalAI />
+        </FeatureCard>
+        <FeatureCard featureId="custom-keys">
+          <CustomAPIKeys />
         </FeatureCard>
         <FeatureCard featureId="data-management">
           <ManageData />
