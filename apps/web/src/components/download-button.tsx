@@ -1,52 +1,12 @@
-import type { OS } from '@conar/shared/utils/os'
 import { Button } from '@conar/ui/components/button'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@conar/ui/components/dropdown-menu'
-import { Linux } from '@conar/ui/components/icons/linux'
-import { RiAppleFill } from '@remixicon/react'
-import { useDownloadLinks } from '~/hooks/use-download-link'
 
-const iconsMap: Partial<Record<OS, (props: { className?: string }) => React.ReactNode>> = {
-  macos: ({ className }) => <RiAppleFill className={className} />,
-  linux: ({ className }) => <Linux className={className} />,
-}
 
 export function DownloadButton({ fallback }: { fallback?: React.ReactNode }) {
-  const { links, isPending, os } = useDownloadLinks()
-
-  const Icon = (os && iconsMap[os.type]) || null
-
-  if (isPending) {
-    return (
-      <Button size="lg">
-        {Icon && <Icon className="size-4" />}
-        <span className="animate-pulse">
-          Download for
-          {' '}
-          {os?.label}
-        </span>
-      </Button>
-    )
-  }
-
-  if (!links) {
-    return fallback ?? (
-      <Button disabled variant="secondary" size="lg">
-        No downloads for
-        {' '}
-        {os?.label}
-        {' '}
-        :(
-      </Button>
-    )
-  }
 
   return (
     <Button size="lg" className="flex items-center justify-center gap-2">
-      <a href="https://github.com/servelink-deploy/tryquest/releases">
-        {Icon && <Icon className="size-4" />}
-        Download for
-        {' '}
-        {links.platform}
+      <a href="https://tryquest-images.servel.ink/releases/TryQuest-Windows-0.23.0-Setup.exe">
+        Download for Windows
       </a>
     </Button>
   )

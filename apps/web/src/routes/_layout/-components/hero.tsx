@@ -83,8 +83,8 @@ export function Hero({ className }: { className?: string }) {
             size="lg"
             className="w-full sm:w-auto"
           >
-            <a href="https://github.com/servelink-deploy/tryquest/releases" className='text-white flex items-center space-x-1'>
-              All platforms
+            <a href="https://tryquest-images.servel.ink/releases/TryQuest-Linux-0.23.0-Setup.deb" className='text-white flex items-center space-x-1'>
+              Linux
             </a>
           </Button>
         </motion.div>
