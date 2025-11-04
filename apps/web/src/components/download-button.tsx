@@ -41,26 +41,13 @@ export function DownloadButton({ fallback }: { fallback?: React.ReactNode }) {
   }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button size="lg" className="flex items-center justify-center gap-2">
-          {Icon && <Icon className="size-4" />}
-          Download for
-          {' '}
-          {links.platform}
-        </Button>
-      </DropdownMenuTrigger>
-      {links.assets.length > 1 && (
-        <DropdownMenuContent>
-          {links.assets.map(asset => (
-            <DropdownMenuItem key={asset.url} asChild>
-              <a href={asset.url} download className="text-foreground flex gap-2">
-                {asset.arch}
-              </a>
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuContent>
-      )}
-    </DropdownMenu>
+    <Button size="lg" className="flex items-center justify-center gap-2">
+      <a href="https://github.com/servelink-deploy/tryquest/releases">
+        {Icon && <Icon className="size-4" />}
+        Download for
+        {' '}
+        {links.platform}
+      </a>
+    </Button>
   )
 }

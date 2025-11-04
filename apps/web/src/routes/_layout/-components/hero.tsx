@@ -83,9 +83,9 @@ export function Hero({ className }: { className?: string }) {
             size="lg"
             className="w-full sm:w-auto"
           >
-            <Link to="/download">
+            <a href="https://github.com/servelink-deploy/tryquest/releases">
               All platforms
-            </Link>
+            </a>
           </Button>
         </motion.div>
       </div>
