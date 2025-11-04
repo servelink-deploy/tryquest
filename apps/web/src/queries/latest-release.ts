@@ -8,8 +8,8 @@ const releaseKey = 'OCTOKIT_RELEASE'
 async function fetchRelease() {
   const octokit = new Octokit()
   const { data } = await octokit.repos.getLatestRelease({
-    owner: 'wannabespace',
-    repo: 'conar',
+    owner: 'servelink-deploy',
+    repo: 'tryquest',
   })
 
   return data
