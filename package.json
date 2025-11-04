@@ -42,6 +42,6 @@
     "taze": "^19.9.0",
     "tsx": "^4.20.6",
     "turbo": "^2.6.0",
-    "typescript": "^5.0.0"
+    "typescript": "catalog:"
   }
 }
