@@ -28,12 +28,15 @@ export function trackEvent(event: string, properties?: Record<string, unknown>) 
 }
 
 export function EventsProvider({ children }: { children: React.ReactNode }) {
-  if (import.meta.env.DEV)
+  const posthogKey = import.meta.env.VITE_PUBLIC_POSTHOG_API_KEY
+  
+  // Skip PostHog in dev or if no API key is configured
+  if (import.meta.env.DEV || !posthogKey)
     return children
 
   return (
     <PostHogProvider
-      apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_API_KEY}
+      apiKey={posthogKey}
       options={{
         session_recording: {
           maskAllInputs: true,

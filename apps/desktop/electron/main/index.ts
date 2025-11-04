@@ -14,11 +14,10 @@ export const store = new Store<{
   betaUpdates?: true
 }>()
 
-const { autoUpdater } = createRequire(import.meta.url)('electron-updater') as typeof import('electron-updater')
-
-const betaUpdates = store.get('betaUpdates')
-
-autoUpdater.channel = betaUpdates ? 'beta' : null
+// Auto-updater disabled
+// const { autoUpdater } = createRequire(import.meta.url)('electron-updater') as typeof import('electron-updater')
+// const betaUpdates = store.get('betaUpdates')
+// autoUpdater.channel = betaUpdates ? 'beta' : null
 
 initElectronEvents()
 
@@ -89,7 +88,8 @@ app.on('ready', () => {
 
   setupProtocolHandler(win)
 
-  setInterval(() => autoUpdater.checkForUpdates(), 1000 * 60 * 10)
+  // Auto-updater disabled
+  // setInterval(() => autoUpdater.checkForUpdates(), 1000 * 60 * 10)
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
@@ -109,26 +109,26 @@ app.on('activate', () => {
   }
 })
 
-function sendUpdatesStatus(status: UpdatesStatus, message?: string) {
-  mainWindow!.webContents.send('updates-status', { status, message })
-}
-
-autoUpdater.on('checking-for-update', () => {
-  sendUpdatesStatus('checking')
-})
-autoUpdater.on('update-available', () => {
-  autoUpdater.downloadUpdate()
-  sendUpdatesStatus('downloading')
-})
-autoUpdater.on('update-not-available', () => {
-  sendUpdatesStatus('no-updates')
-})
-autoUpdater.on('error', (e) => {
-  sendUpdatesStatus('error', e.message.split('\n')[0])
-})
-autoUpdater.on('download-progress', () => {
-  sendUpdatesStatus('downloading')
-})
-autoUpdater.on('update-downloaded', (event) => {
-  sendUpdatesStatus('ready', typeof event.releaseNotes === 'string' ? event.releaseNotes : undefined)
-})
+// Auto-updater disabled
+// function sendUpdatesStatus(status: UpdatesStatus, message?: string) {
+//   mainWindow!.webContents.send('updates-status', { status, message })
+// }
+// autoUpdater.on('checking-for-update', () => {
+//   sendUpdatesStatus('checking')
+// })
+// autoUpdater.on('update-available', () => {
+//   autoUpdater.downloadUpdate()
+//   sendUpdatesStatus('downloading')
+// })
+// autoUpdater.on('update-not-available', () => {
+//   sendUpdatesStatus('no-updates')
+// })
+// autoUpdater.on('error', (e) => {
+//   sendUpdatesStatus('error', e.message.split('\n')[0])
+// })
+// autoUpdater.on('download-progress', () => {
+//   sendUpdatesStatus('downloading')
+// })
+// autoUpdater.on('update-downloaded', (event) => {
+//   sendUpdatesStatus('ready', typeof event.releaseNotes === 'string' ? event.releaseNotes : undefined)
+// })

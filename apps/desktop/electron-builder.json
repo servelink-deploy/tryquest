@@ -6,13 +6,8 @@
   "directories": {
     "output": "release/${version}"
   },
-  "generateUpdatesFilesForAllChannels": true,
-  "publish": {
-    "private": false,
-    "provider": "github",
-    "owner": "zenderock",
-    "repo": "tryquest"
-  },
+  "generateUpdatesFilesForAllChannels": false,
+  "publish": null,
   "protocols": [
     {
       "name": "TryQuest",
@@ -38,7 +33,7 @@
     "artifactName": "${productName}-Mac-${arch}-${version}-Installer.${ext}"
   },
   "win": {
-    "icon": "build/icon.ico",
+    "icon": "build/logo.png",
     "target": [
       {
         "target": "nsis",

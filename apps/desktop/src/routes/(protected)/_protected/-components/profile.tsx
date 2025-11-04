@@ -15,9 +15,9 @@ export function Profile({ className }: { className?: string }) {
 
   return (
     <>
-      <div className={cn('flex flex-row items-center justify-between', className)}>
-        <div className="flex flex-row items-center gap-4">
-          <UserAvatar className="size-16" fallbackClassName="text-2xl" />
+      <div className={cn('flex flex-row items-center justify-between p-6 bg-muted/20 rounded-xl border border-border/50', className)}>
+        <div className="flex flex-row items-center gap-6">
+          <UserAvatar className="size-20" fallbackClassName="text-2xl" />
           <div>
             {data?.user
               ? (
@@ -36,10 +36,10 @@ export function Profile({ className }: { className?: string }) {
               )}
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           <Button
             variant="outline"
-            size="sm"
+            size="default"
             onClick={() => setLocalAIDialogOpen(true)}
           >
             <RiRobotLine />
@@ -47,7 +47,7 @@ export function Profile({ className }: { className?: string }) {
           </Button>
           <Button
             variant="outline"
-            size="sm"
+            size="default"
             onClick={() => setApiKeysDialogOpen(true)}
           >
             <RiKey2Line />
@@ -55,7 +55,7 @@ export function Profile({ className }: { className?: string }) {
           </Button>
           <Button
             variant="outline"
-            size="sm"
+            size="default"
             onClick={() => signOut()}
             disabled={isSigningOut}
           >

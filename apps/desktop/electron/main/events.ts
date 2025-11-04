@@ -8,7 +8,8 @@ import { store } from '.'
 import { ollamaManager } from './ollama-manager'
 import { pgQuery, pgTestConnection } from './pg'
 
-const { autoUpdater } = createRequire(import.meta.url)('electron-updater') as typeof import('electron-updater')
+// Auto-updater disabled
+// const { autoUpdater } = createRequire(import.meta.url)('electron-updater') as typeof import('electron-updater')
 
 const encryption = {
   encrypt,
@@ -64,20 +65,14 @@ const databases = {
 
 const _app = {
   checkForUpdates: () => {
-    return autoUpdater.checkForUpdates()
+    // Auto-updater disabled
+    return Promise.resolve(null)
   },
   quitAndInstall: () => {
-    autoUpdater.quitAndInstall()
+    // Auto-updater disabled
   },
   channelUpdates: (type: 'default' | 'beta') => {
-    autoUpdater.channel = type === 'default' ? null : 'beta'
-
-    if (type === 'beta') {
-      store.set('betaUpdates', true)
-    }
-    else {
-      store.delete('betaUpdates')
-    }
+    // Auto-updater disabled
   },
 }
 

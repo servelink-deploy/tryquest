@@ -2,7 +2,8 @@ import type { BrowserWindow, MenuItemConstructorOptions } from 'electron'
 import { createRequire } from 'node:module'
 import { app, Menu, shell } from 'electron'
 
-const { autoUpdater } = createRequire(import.meta.url)('electron-updater') as typeof import('electron-updater')
+// Auto-updater disabled
+// const { autoUpdater } = createRequire(import.meta.url)('electron-updater') as typeof import('electron-updater')
 
 function setupDevelopmentEnvironment(mainWindow: BrowserWindow): void {
   mainWindow.webContents.on('context-menu', (_, props) => {
@@ -34,12 +35,13 @@ function buildTemplate(mainWindow: BrowserWindow): MenuItemConstructorOptions[] 
           label: 'About TryQuest',
           selector: 'orderFrontStandardAboutPanel:',
         },
-        {
-          label: 'Check for Updates...',
-          click: () => {
-            autoUpdater.checkForUpdates()
-          },
-        },
+        // Auto-updater disabled
+        // {
+        //   label: 'Check for Updates...',
+        //   click: () => {
+        //     autoUpdater.checkForUpdates()
+        //   },
+        // },
         { type: 'separator' },
         {
           label: 'Hide TryQuest',

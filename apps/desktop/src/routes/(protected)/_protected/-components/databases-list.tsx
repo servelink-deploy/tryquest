@@ -28,21 +28,21 @@ function DatabaseCard({ database, onRemove, onRename }: { database: typeof datab
 
   return (
     <Link
-      className="relative flex items-center justify-between gap-4 rounded-lg bg-muted/30 p-5 border border-border/50 hover:border-primary transition-all duration-150"
+      className="relative flex items-center justify-between gap-6 rounded-xl bg-muted/30 p-6 border border-border/50 hover:border-primary hover:shadow-sm transition-all duration-150"
       {...params}
     >
-      <div className="size-12 shrink-0 rounded-lg bg-muted/70 p-3">
+      <div className="size-14 shrink-0 rounded-xl bg-muted/70 p-3.5">
         <DatabaseIcon type={database.type} className="size-full text-primary" />
       </div>
-      <div className="flex flex-1 flex-col min-w-0">
-        <div className="font-medium tracking-tight truncate flex items-center gap-2">
+      <div className="flex flex-1 flex-col gap-1.5 min-w-0">
+        <div className="font-semibold text-base tracking-tight truncate flex items-center gap-2">
           {database.name}
         </div>
-        <div data-mask className="text-xs text-muted-foreground font-mono truncate">{connectionString.replaceAll('*', '•')}</div>
+        <div data-mask className="text-sm text-muted-foreground font-mono truncate">{connectionString.replaceAll('*', '•')}</div>
       </div>
       <DropdownMenu>
-        <DropdownMenuTrigger className="rounded-md p-2 hover:bg-accent-foreground/5">
-          <RiMoreLine className="size-4" />
+        <DropdownMenuTrigger className="rounded-lg p-2.5 hover:bg-accent-foreground/5">
+          <RiMoreLine className="size-5" />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem
@@ -120,7 +120,7 @@ export function DatabasesList() {
     <div className="flex flex-col gap-6">
       <RemoveConnectionDialog ref={removeDialogRef} />
       <RenameConnectionDialog ref={renameDialogRef} />
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-4">
         {!databases
           ? (
               <>

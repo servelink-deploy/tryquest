@@ -14,6 +14,7 @@ import { useEffect, useEffectEvent, useRef } from 'react'
 import { toast } from 'sonner'
 import { TipTap } from '~/components/tiptap'
 import { orpc, orpcQuery } from '~/lib/orpc'
+import { aiSettingsStore } from '~/lib/ai/settings-store'
 import { Route } from '../..'
 import { chatHooks } from '../../-page'
 import { databaseStore } from '../../../../-store'
@@ -54,6 +55,8 @@ export function ChatForm() {
   const ref = useRef<ComponentRef<typeof TipTap>>(null)
   const store = databaseStore(database.id)
   const input = useStore(store, state => state.chatInput)
+  const useLocalAI = useStore(aiSettingsStore, state => state.useLocalAI)
+  const defaultLocalModel = useStore(aiSettingsStore, state => state.defaultLocalModel)
 
   useEffect(() => {
     if (ref.current) {
@@ -230,7 +233,7 @@ export function ChatForm() {
           }}
         />
         <div className="px-2 pb-2 flex justify-between items-end pointer-events-none">
-          <div className="pointer-events-auto">
+          <div className="flex items-center gap-2 pointer-events-auto">
             <Button
               type="button"
               size="icon-xs"
@@ -251,6 +254,20 @@ export function ChatForm() {
                 />
               </label>
             </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span className="text-xs text-muted-foreground/70 font-mono px-2 py-1 bg-muted/30 rounded border border-border/50 cursor-default">
+                  {useLocalAI ? defaultLocalModel.split(':')[0] : 'Gemini 2.0'}
+                </span>
+              </TooltipTrigger>
+              <TooltipContent side="top">
+                <p className="text-xs">
+                  {useLocalAI
+                    ? `Modèle local: ${defaultLocalModel}`
+                    : 'Modèle cloud: Gemini 2.0 Flash'}
+                </p>
+              </TooltipContent>
+            </Tooltip>
           </div>
           <div className="flex gap-2 pointer-events-auto">
             <Tooltip>

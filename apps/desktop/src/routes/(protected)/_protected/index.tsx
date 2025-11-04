@@ -25,12 +25,12 @@ function DashboardPage() {
   const [version, versionStatus] = useStore(updatesStore, state => [state.version, state.status])
 
   return (
-    <div className="min-h-screen flex flex-col px-6 mx-auto max-w-2xl py-10">
-      <h1 className="scroll-m-20 mb-6 text-4xl font-extrabold tracking-tight lg:text-5xl">
+    <div className="min-h-screen flex flex-col px-8 mx-auto max-w-4xl py-12">
+      <h1 className="scroll-m-20 mb-10 text-4xl font-extrabold tracking-tight lg:text-5xl">
         Dashboard
       </h1>
-      <Profile className="mb-8" />
-      <div className="flex items-center justify-between mb-6">
+      <Profile className="mb-12" />
+      <div className="flex items-center justify-between mb-8">
         <h2 className="text-3xl lg:text-4xl font-bold">
           Connections
         </h2>
@@ -56,33 +56,19 @@ function DashboardPage() {
         </div>
       </div>
       <DatabasesList />
-      <div className="mt-auto pt-6">
+      <div className="mt-auto pt-10">
         <Separator />
         <div className="mt-3 flex gap-2 items-center">
           <a
-            href="https://conar.app"
+            href="https://servel.ink/tryquest"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground/50 p-1 hover:text-muted-foreground/70 transition-colors"
           >
             <RiGlobalLine className="size-4" />
           </a>
-          <a
-            href={SOCIAL_LINKS.TWITTER}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground/50 p-1 hover:text-muted-foreground/70 transition-colors"
-          >
-            <RiTwitterXLine className="size-4" />
-          </a>
-          <a
-            href={SOCIAL_LINKS.DISCORD}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground/50 p-1 hover:text-muted-foreground/70 transition-colors"
-          >
-            <RiDiscordLine className="size-4" />
-          </a>
+
+
           <a
             href={SOCIAL_LINKS.GITHUB}
             target="_blank"

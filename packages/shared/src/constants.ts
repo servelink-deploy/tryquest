@@ -1,10 +1,10 @@
 export const SOCIAL_LINKS = {
-  GITHUB: 'https://github.com/wannabespace/conar',
-  TWITTER: 'https://x.com/conar_app',
-  DISCORD: 'https://discord.gg/XweDPUVadR',
+  GITHUB: 'https://github.com/servelink-deploy/tryquest',
+  TWITTER: 'https://x.com/aubigo',
+  DISCORD: '',
 } as const
 
-export const SUPPORT_EMAIL = 'valerii.strilets@gmail.com'
+export const SUPPORT_EMAIL = 'support@servel.ink'
 
 export const PORTS = {
   DEV: {
